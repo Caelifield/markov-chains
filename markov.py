@@ -11,10 +11,10 @@ def open_and_read_file(file_path):
     """
 
     # your code goes here
-    contents = open(file_path).read()
+    # contents = open(file_path).read()
     
 
-    return contents
+    return open(file_path).read()
 
 
 def make_chains(text_string):
@@ -51,21 +51,40 @@ def make_chains(text_string):
     for i in range(len(words) - 2):
         if (words[i], words[i + 1]) not in chains:
             chains[(words[i], words[i + 1])] = []
-            chains[(words[i], words[i + 1])].append(words[i + 2])
-        else:
-            chains[(words[i], words[i + 1])].append(words[i + 2])
+        chains[(words[i], words[i + 1])].append(words[i + 2])
+        # else:
+        #     chains[(words[i], words[i + 1])].append(words[i + 2])
         # let’s create a list as the value and append words into it.
     
-    print(chains)
     return chains
 
 
 def make_text(chains):
     """Return text from chains."""
+    
+    # key from our dictionary 
+    # and a random word from the list of words that follow it
+    # Put in list
+    # Join in return
+    # Make a new key out of the second word in the 
+    # first key and the random word you pulled out 
+    # from the list of words that followed it.
+    
+    # Pull out random key from dictionary 
+    
+    for chain in chains:
+        random_word = chains[chain].choice()
+        print(random_word)
+        
+        
+        
+        
+    # Select a random word from the value of that key
 
-    words = []
+    # words = []
 
-    # your code goes here
+    # # your code goes here
+    # for i in range()
 
     return " ".join(words)
 
