@@ -66,16 +66,33 @@ def make_text(chains):
     # and a random word from the list of words that follow it
     # Put in list
     # Join in return
-    # Make a new key out of the second word in the 
-    # first key and the random word you pulled out 
-    # from the list of words that followed it.
+    
+# Make a new key out of the second word in the first key and the random word you pulled out from the list of words that followed it.
+# Look up that new key in the dictionary, and pull a new random word out of the new list.
+# Keep doing that until your program raises a KeyError.
     
     # Pull out random key from dictionary 
     
-    for chain in chains:
-        random_word = chains[chain].choice()
-        print(random_word)
-        
+    #random.choice(varible)
+    #chains
+    words = []
+    
+
+    # for chain in chains:
+    # random_chain = choice(chains) #random_chain = key
+    random_chain = ('Would', 'you')
+    words.append(random_chain[0])
+    words.append(random_chain[1])
+    while True:   
+        random_word = choice(chains[random_chain]) 
+        words.append(random_word)
+        new_key = (random_chain[1], random_word)
+        random_chain = new_key
+        if new_key == ("I", "am?"):
+            break
+      
+    
+    
         
         
         
